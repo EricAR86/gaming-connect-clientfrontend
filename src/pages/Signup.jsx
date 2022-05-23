@@ -9,8 +9,11 @@ export default function Signup({ authenticate }) {
   const [form, setForm] = useState({
     username: "",
     password: "",
+    email: "",
+    country: "",
+    platform: ""
   });
-  const { username, password } = form;
+  const { username, password, email, country, platform } = form;
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -24,7 +27,12 @@ export default function Signup({ authenticate }) {
     const credentials = {
       username,
       password,
+      email,
+      country,
+      platform,
     };
+    console.log(credentials)
+
     signup(credentials).then((res) => {
       if (!res.status) {
         // unsuccessful signup
@@ -55,6 +63,17 @@ export default function Signup({ authenticate }) {
           required
         />
 
+        <label htmlFor="input-email">Email</label>
+        <input
+          id="input-email"
+          type="email"
+          name="email"
+          placeholder="example@email.com"
+          value={email}
+          onChange={handleInputChange}
+          required
+        />
+
         <label htmlFor="input-password">Password</label>
         <input
           id="input-password"
@@ -66,6 +85,30 @@ export default function Signup({ authenticate }) {
           required
           minLength="8"
         />
+
+        <label htmlFor="input-country">Country</label>
+        <input
+          id="input-country"
+          type="text"
+          name="country"
+          placeholder="Insert your Country"
+          value={country}
+          onChange={handleInputChange}
+          required
+        />
+
+        <label htmlFor="input-platform">Preferred Platform</label>
+        <input
+          id="input-platform"
+          type="text"
+          name="platform"
+          placeholder="Xbox, PlayStation, PC"
+          value={platform}
+          onChange={handleInputChange}
+          required
+        />
+
+
 
         {error && (
           <div className="error-block">
