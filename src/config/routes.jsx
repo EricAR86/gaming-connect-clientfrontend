@@ -3,7 +3,7 @@ import HomePage from "../pages/HomePage";
 import Login from "../pages/LogIn";
 import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
-import VideogamesPage from "../pages/VideogamesPage";
+import UserPage from "../pages/UserPage";
 import * as PATHS from "../utils/paths";
 
 const routes = (props) => {
@@ -17,14 +17,13 @@ const routes = (props) => {
       path: PATHS.SIGNUPPAGE,
       element: <Signup {...props} />,
     },
-
     {
       path: PATHS.LOGINPAGE,
       element: <Login {...props} />,
     },
     {
-      path: PATHS.VIDEOGAMEPAGE,
-      element: <VideogamesPage {...props} />,
+      path: PATHS.USERPAGE,
+      element: <UserPage {...props} />,
     },
     {
       path: PATHS.PROTECTEDPAGE,

@@ -21,7 +21,7 @@ const settings = {
 export default function Carousel() {
     // As we have used custom buttons, we need a reference variable to
     // change the state
-    const [slider, setSlider] = React.useState < Slider | null > (null);
+    const [slider, setSlider] = React.useState(null);
 
     // These are the breakpoints which changes the position of the
     // buttons as the screen size changes
@@ -30,15 +30,15 @@ export default function Carousel() {
 
     // These are the images used in the slide
     const cards = [
-        'https://images.unsplash.com/photo-1612852098516-55d01c75769a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-        'https://images.unsplash.com/photo-1627875764093-315831ac12f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
-        'https://images.unsplash.com/photo-1571432248690-7fd6980a1ae2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        'https://compass-ssl.xbox.com/assets/9c/94/9c944d9c-7ef1-4b46-9f68-9b02966d3993.jpg?n=Halo-Infinite_GLP-Page-Hero-0_1083x609.jpg',
+        'https://i0.wp.com/hipertextual.com/wp-content/uploads/2017/07/destiny-2-art.jpg?fit=1900%2C1068&ssl=1',
+        'https://i0.wp.com/www.madboxpc.com/wp-content/uploads/2020/04/call-of-duty-warzone-normal-hero-01-ps4-10mar20-en-us.jpeg?fit=1599%2C600&ssl=1',
     ];
 
     return (
         <Box
             position={'relative'}
-            height={'600px'}
+            height={'1000px'}
             width={'full'}
             overflow={'hidden'}>
             {/* CSS files for react-slick */}

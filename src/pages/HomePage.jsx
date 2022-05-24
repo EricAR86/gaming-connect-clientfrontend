@@ -10,7 +10,9 @@ import {
 
 } from '@chakra-ui/react';
 
-
+import Carousel from "../components/Carousel"
+import FormContainer from '../components/FormContainer';
+import SmallWithLogoLeft from "../components/Footer"
 
 
 
@@ -53,6 +55,11 @@ function HomePage() {
           </Stack>
         </Stack>
       </Container>
+
+      <FormContainer />
+      <Carousel />
+
+      <SmallWithLogoLeft />
 
 
     </>
