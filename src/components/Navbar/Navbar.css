@@ -13,12 +13,12 @@ nav {
 }
 
 .authLink {
-  color: #61dafb;
+  color: #46FB02;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }
 
-.authLink + .authLink {
+.authLink+.authLink {
   padding: 1em;
 }
 

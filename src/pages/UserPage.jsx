@@ -1,10 +1,10 @@
 import React from 'react'
 import UserCard from "../components/UserCard"
 
-const UserPage = () => {
+const UserPage = (props) => {
     return (
         <div>
-            <UserCard />
+            <UserCard {...props} />
         </div>
     )
 }

@@ -1,12 +1,7 @@
 import React from 'react'
-import { Flex, FormControl, FormHelperText, FormLabel, Select, Button, Wrap, WrapItem } from "@chakra-ui/react";
+import { Select, Button, Wrap, WrapItem } from "@chakra-ui/react";
 
-import {
-    AutoComplete,
-    AutoCompleteInput,
-    AutoCompleteItem,
-    AutoCompleteList,
-} from "@choc-ui/chakra-autocomplete";
+
 
 import { useState, useEffect } from 'react'
 import axios from 'axios';
@@ -37,13 +32,6 @@ const FormSearch = (props) => {
     }, [])
 
 
-    const countries = [
-        "nigeria",
-        "japan",
-        "india",
-        "united states",
-        "south korea",
-    ];
     return (
         <div className='form-search'>
             <Wrap spacing={4}>
@@ -54,7 +42,7 @@ const FormSearch = (props) => {
 
             <input value={videogame} disabled />
 
-            <Select placeholder='Platform'>
+            <Select placeholder='Platform' onChange={(evento) => setPlatform(evento.target.value)}>
                 <option value='Xbox'>Xbox </option>
                 <option value='PlayStation'>PlayStation</option>
                 <option value='Nintendo'>Nintendo</option>
@@ -64,12 +52,14 @@ const FormSearch = (props) => {
 
             <input value={platform} disabled />
 
-
-            <Select placeholder='Language'>
+            <Select placeholder='Language' onChange={(evento) => setLanguage(evento.target.value)}>
                 <option value='Español'>Español</option>
                 <option value='English'>English</option>
                 <option value='Frances'>Frances</option>
             </Select>
+
+            <input value={language} disabled />
+
         </div>
     )
 }
