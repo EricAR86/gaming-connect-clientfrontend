@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "../App.css";
 import {
 
@@ -49,9 +50,11 @@ function HomePage() {
               _hover={{ bg: 'green.500' }}>
               Find a Game
             </Button>
-            <Button rounded={'full'} px={6}>
-              Create a Group
-            </Button>
+            <Link to={"/posts/new"}>
+              <Button rounded={'full'} px={6}>
+                Create a Group
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Container>
