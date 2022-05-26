@@ -34,15 +34,19 @@ const CreatePostForm = (props) => {
     const [communication, setCommunication] = useState("")
     const [category, setCategory] = useState("")
 
+    const userRef = props.user?._id
+    console.log(userRef)
+
 
     function handleSubmit(event) {
 
-        axios.post(" http://localhost:5005/api/posts/new", { title, description, date, language, players, communication, category })
+        axios.post(" http://localhost:5005/api/posts/new", { title, description, date, language, players, communication, category, userRef })
             .then(newPost => {
                 console.log(newPost)
             })
             .catch(error => console.log(error))
     }
+
 
     return (
         <div>

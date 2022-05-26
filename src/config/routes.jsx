@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import ProtectedPage from "../pages/ProtectedPage";
 import UserPage from "../pages/UserPage";
 import CreatePost from "../pages/CreatePost";
+import PostDetailsPage from "../pages/PostDetailsPage";
 import * as PATHS from "../utils/paths";
 
 const routes = (props) => {
@@ -29,6 +30,10 @@ const routes = (props) => {
     {
       path: PATHS.CREATEPOST,
       element: <CreatePost {...props} />,
+    },
+    {
+      path: PATHS.POSTDETAILS,
+      element: <PostDetailsPage {...props} />,
     },
     {
       path: PATHS.PROTECTEDPAGE,

@@ -16,15 +16,16 @@ import axios from "axios"
 
 import { useParams } from 'react-router-dom'
 
-
 const UserCard = (props) => {
+    //console.log("las props", props)
     const { id } = useParams()
 
     const [usuario, setUsuario] = useState({})
 
     useEffect(() => {
-        axios.get(`http://localhost:5005/api/users/62893e307c0597afd9f545f7`)
+        axios.get(`http://localhost:5005/api/users/${props.user?._id}`)
             .then(infoUser => {
+                console.log(infoUser)
                 setUsuario(infoUser.data)
             })
             .catch(console.log)
