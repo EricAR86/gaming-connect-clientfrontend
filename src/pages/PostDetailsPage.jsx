@@ -25,7 +25,7 @@ const PostDetailsPage = (props) => {
   console.log(id)
 
   useEffect(() => {
-    axios.get(` http://localhost:5005/api/posts/${id}`)
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/api/posts/${id}`)
       .then(infoPost => {
         setPost(infoPost.data)
       })
