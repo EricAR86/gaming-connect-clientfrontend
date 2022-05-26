@@ -40,7 +40,7 @@ const CreatePostForm = (props) => {
 
     function handleSubmit(event) {
 
-        axios.post(`${process.env.REACT_APP_SERVER_URL}/api/posts/new`, { title, description, date, language, players, communication, category, userRef })
+        axios.post(`${process.env.REACT_APP_SERVER_URL}/posts/new`, { title, description, date, language, players, communication, category, userRef })
             .then(newPost => {
                 console.log(newPost)
             })

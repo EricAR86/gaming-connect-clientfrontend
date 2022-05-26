@@ -23,7 +23,7 @@ const UserCard = (props) => {
     const [usuario, setUsuario] = useState({})
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/api/users/${props.user?._id}`)
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/users/${props.user?._id}`)
             .then(infoUser => {
                 console.log(infoUser)
                 setUsuario(infoUser.data)

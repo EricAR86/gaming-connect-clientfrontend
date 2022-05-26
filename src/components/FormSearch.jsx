@@ -23,7 +23,7 @@ const FormSearch = (props) => {
 
     const [allVideogames, setAllVideogames] = useState([])
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/api/videogames`)
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/videogames`)
             .then(videogames => {
                 setAllVideogames(videogames.data)
                 console.log(videogames.data)
