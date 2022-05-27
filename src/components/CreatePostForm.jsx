@@ -21,10 +21,11 @@ import axios from 'axios'
 
 import React, { useState, useEffect } from 'react'
 
-
+import { useNavigate } from "react-router-dom"
 
 const CreatePostForm = (props) => {
 
+    const navigate = useNavigate()
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [date, setDate] = useState("")
@@ -41,6 +42,7 @@ const CreatePostForm = (props) => {
         axios.post(`${process.env.REACT_APP_SERVER_URL}/posts/new`, { title, description, date, language, players, communication, category, userRef })
             .then(newPost => {
                 console.log(newPost)
+                navigate("/")
             })
             .catch(error => console.log(error))
     }
