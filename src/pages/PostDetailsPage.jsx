@@ -71,7 +71,7 @@ const PostDetailsPage = (props) => {
             height={270}
             width={282}
             objectFit={'cover'}
-          // src={post.videogameRef.image}
+            src={post?.videogameRef?.image}
           />
         </Box>
         <Stack pt={10} align={'center'}>
