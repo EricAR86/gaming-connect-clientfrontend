@@ -21,7 +21,7 @@ const PostDetailsPage = (props) => {
   const [post, setPost] = useState({})
 
   const { id } = useParams()
-  console.log(id)
+
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/posts/${id}`)
@@ -31,6 +31,7 @@ const PostDetailsPage = (props) => {
       .catch(err => console.log(err))
   }, [id])
 
+  console.log(post)
 
   return (
     <Center py={12}>

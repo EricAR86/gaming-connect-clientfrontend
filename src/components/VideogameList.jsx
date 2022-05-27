@@ -2,18 +2,22 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios"
 import moment from 'moment';
-import { Text, Stack, Center, Heading, Grid, GridItem } from '@chakra-ui/react'
+import { Stack, Center, Heading, Grid } from '@chakra-ui/react'
 const VideogameList = (props) => {
-    const { language } = props
+    const { videogame, language } = props
     const [posts, setPosts] = useState([])
     useEffect(() => {
 
         let url = `${process.env.REACT_APP_SERVER_URL}/posts`
 
-        if (language !== "") {
-            url += `?language=${language}&platform="xbox"`
+        if (videogame !== "") {
+            url += `?videogame=${videogame}`
         }
 
+        if (videogame !== "" && language !== "") {
+            url += `&language=${language}`
+        }
+        console.log(url)
         axios.get(url)
             .then(datos => {
                 setPosts(datos.data)
@@ -21,7 +25,7 @@ const VideogameList = (props) => {
 
             })
             .catch(console.log)
-    }, [language])
+    }, [videogame, language])
 
     return (
         <div>

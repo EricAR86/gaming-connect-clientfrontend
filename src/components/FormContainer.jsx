@@ -20,7 +20,7 @@ const FormContainer = () => {
                 setPlatform={setPlatform}
                 setLanguage={setLanguage}
             />
-            <VideogameList language={language} />
+            <VideogameList language={language} videogame={videogame} />
         </div>
     )
 }
