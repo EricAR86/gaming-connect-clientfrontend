@@ -17,7 +17,7 @@ import axios from "axios"
 import { useParams } from 'react-router-dom'
 
 const UserCard = (props) => {
-    //console.log("las props", props)
+
     const { id } = useParams()
 
     const [usuario, setUsuario] = useState({})
@@ -31,7 +31,7 @@ const UserCard = (props) => {
             .catch(console.log)
     }, [id])
 
-    console.log(usuario)
+
 
 
 

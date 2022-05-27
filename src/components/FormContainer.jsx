@@ -20,7 +20,7 @@ const FormContainer = () => {
                 setPlatform={setPlatform}
                 setLanguage={setLanguage}
             />
-            <VideogameList />
+            <VideogameList language={language} />
         </div>
     )
 }
@@ -28,9 +28,3 @@ const FormContainer = () => {
 export default FormContainer
 
 
-/*
-
-1- Estado para guardar lo que selecciona usuario (videogame, platform, language)
-2 - otro estado para guardar los resultados del backend (videogameList)
-
-*/

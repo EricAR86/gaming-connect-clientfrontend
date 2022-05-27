@@ -42,16 +42,13 @@ function HomePage() {
             The best place to find players and build groups
           </Text>
           <Stack spacing={6} direction={'row'}>
-            <Button
-              rounded={'full'}
-              px={6}
-              colorScheme={'green'}
-              bg={'green.400'}
-              _hover={{ bg: 'green.500' }}>
-              Find a Game
-            </Button>
             <Link to={"/posts/new"}>
-              <Button rounded={'full'} px={6}>
+              <Button
+                rounded={'full'}
+                px={6}
+                colorScheme={'green'}
+                bg={'green.400'}
+                _hover={{ bg: 'green.500' }}>
                 Create a Group
               </Button>
             </Link>

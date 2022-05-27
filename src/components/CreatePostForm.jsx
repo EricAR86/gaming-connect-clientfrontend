@@ -2,7 +2,6 @@
 import {
     FormControl,
     FormLabel,
-    FormErrorMessage,
     Input,
     FormHelperText,
     Select,
@@ -11,17 +10,11 @@ import {
     NumberInputStepper,
     NumberIncrementStepper,
     NumberDecrementStepper,
-    Radio,
-    RadioGroup,
-    HStack,
     Button,
-    Flex,
-    Heading,
     Stack,
-    useColorModeValue,
 } from '@chakra-ui/react'
 import axios from 'axios'
-
+import { useNavigate } from "react-router-dom"
 import React, { useState, useEffect } from 'react'
 
 const CreatePostForm = (props) => {
@@ -30,7 +23,7 @@ const CreatePostForm = (props) => {
     const [description, setDescription] = useState("")
     const [date, setDate] = useState("")
     const [language, setLanguage] = useState("")
-    const [players, setPlayers] = useState(null)
+    const [players, setPlayers] = useState(3)
     const [communication, setCommunication] = useState("")
     const [category, setCategory] = useState("")
 
@@ -48,9 +41,13 @@ const CreatePostForm = (props) => {
     }
 
 
+
     return (
         <div>
             <h1>Create a Post</h1>
+
+
+
             <FormControl isRequired>
                 <FormLabel htmlFor='title'>VideoGame</FormLabel>
                 <Input
