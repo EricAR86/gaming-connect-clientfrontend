@@ -34,31 +34,44 @@ const FormSearch = (props) => {
 
     return (
         <div className='form-search'>
-            <Wrap spacing={4}>
+
+            {/* alternatetive button selection */}
+
+            {/* <Wrap spacing={4}>
                 {allVideogames.map(videogame => {
-                    return <WrapItem key={videogame._id} onClick={() => setVideogame(videogame.title)}><Button colorScheme='green' variant='solid'>{videogame.title}</Button></WrapItem>
+                    return (
+                        <WrapItem key={videogame._id} onClick={() => setVideogame(videogame.title)}><Button colorScheme='green' variant='solid'>{videogame.title}</Button></WrapItem>
+                    )
                 })}
-            </Wrap>
+            </Wrap> */}
 
-            <input value={videogame} disabled />
+            <Select placeholder='Select a Videogame' onChange={(evento) => setVideogame(evento.target.value)}>
+                {
+                    allVideogames.map(videogame =>
+                        <option key={videogame._id}>{videogame.title}</option>)
+                }
+            </Select>
 
-            <Select placeholder='Platform' onChange={(evento) => setPlatform(evento.target.value)}>
+            {/* <input value={videogame} disabled /> */}
+
+            {/* <Select placeholder='Platform' onChange={(evento) => setPlatform(evento.target.value)}>
                 <option value='Xbox'>Xbox </option>
                 <option value='PlayStation'>PlayStation</option>
                 <option value='Nintendo'>Nintendo</option>
                 <option value='PC'>PC</option>
 
             </Select>
-
-            <input value={platform} disabled />
+            <input value={platform} disabled /> */}
 
             <Select placeholder='Language' onChange={(evento) => setLanguage(evento.target.value)}>
                 <option value='Español'>Español</option>
                 <option value='English'>English</option>
-                <option value='Frances'>Frances</option>
+                <option value='Français'>Français</option>
+                <option value='Português'>Português</option>
             </Select>
 
-            <input value={language} disabled />
+            {/* <input value={language} disabled /> */}
+
 
         </div>
     )

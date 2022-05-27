@@ -31,12 +31,12 @@ nav {
   font-weight: inherit;
   padding: 0.5em 1em;
   margin-left: 1em;
-  background-color: #5595ff;
+  background-color: #46FB02;
   box-shadow: 0 0 5px 0 aliceblue;
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  color: #e3f2ff;
+  color: black;
   transition: all 0.2s ease-in-out;
   position: sticky;
   top: 0;

@@ -56,8 +56,8 @@ function HomePage() {
         </Stack>
       </Container>
 
-      <FormContainer />
       <Carousel />
+      <FormContainer />
 
       <SmallWithLogoLeft />
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios"
+import moment from 'moment';
+import { Text, Stack, Center, Heading, Grid, GridItem } from '@chakra-ui/react'
 const VideogameList = (props) => {
     const { language } = props
     const [posts, setPosts] = useState([])
@@ -24,11 +26,32 @@ const VideogameList = (props) => {
     return (
         <div>
 
-            {posts.length === 0 && "Selecciona de lado derecho"}
+            {posts.length === 0 && "There is no results"}
 
             {
                 posts.map(post => {
-                    return <Link key={posts._id} to={`/posts/${post._id}`} > <div>{post.title} - {post.language} </div></Link>
+                    return (
+                        <Link key={posts._id} to={`/posts/${post._id}`}>
+                            <div>
+                                <Grid row>
+
+                                    <Center py={12}>
+                                        <Stack pt={10} align={'center'}>
+                                            <Heading fontSize={'xl'} fontFamily={'body'} fontWeight={500}>
+                                                {post.title}
+                                            </Heading>
+                                            <Heading fontSize={'xl'} fontFamily={'body'} fontWeight={500}>
+                                                {post.language}
+                                            </Heading>
+                                            <Heading fontSize={'xl'} fontFamily={'body'} fontWeight={500}>
+                                                {moment(post.date).format("dddd MMMM Do YYYY, h:mm a")}
+                                            </Heading>
+                                        </Stack>
+                                    </Center>
+                                </Grid>
+                            </div>
+                        </Link>
+                    )
                 })
             }
         </div >

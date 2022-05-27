@@ -6,6 +6,18 @@ import * as PATHS from "../utils/paths";
 import * as USER_HELPERS from "../utils/userToken";
 import "./auth.css";
 
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  Button,
+  Heading,
+  useColorModeValue,
+} from '@chakra-ui/react';
+
 export default function LogIn({ authenticate }) {
   const [form, setForm] = useState({
     username: "",
@@ -39,30 +51,69 @@ export default function LogIn({ authenticate }) {
 
   return (
     <div>
-      <h1>Log In</h1>
       <form onSubmit={handleFormSubmission} className="signup__form">
-        <label htmlFor="input-username">Username</label>
-        <input
-          id="input-username"
-          type="text"
-          name="username"
-          placeholder="username"
-          value={username}
-          onChange={handleInputChange}
-          required
-        />
+        <Flex
+          minH={'100vh'}
+          align={'center'}
+          justify={'center'}
+          bg={useColorModeValue('gray.50', 'gray.800')}>
+          <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+            <Stack align={'center'}>
+              <Heading fontSize={'4xl'}>Log In to your account</Heading>
 
-        <label htmlFor="input-password">Password</label>
-        <input
-          id="input-password"
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={handleInputChange}
-          required
-          minLength="8"
-        />
+            </Stack>
+            <Box
+              rounded={'lg'}
+              bg={useColorModeValue('white', 'gray.700')}
+              boxShadow={'lg'}
+              p={8}>
+              <Stack spacing={4}>
+                <FormControl>
+                  <FormLabel>UserName</FormLabel>
+                  <Input
+                    id="input-username"
+                    type="text"
+                    name="username"
+                    placeholder="username"
+                    value={username}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Password</FormLabel>
+                  <Input
+                    id="input-password"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={handleInputChange}
+                    required
+                    minLength="8"
+                  />
+                </FormControl>
+                <Stack spacing={10}>
+                  <Stack
+                    direction={{ base: 'column', sm: 'row' }}
+                    align={'start'}
+                    justify={'space-between'}>
+
+                  </Stack>
+                  <Button
+                    type="submit"
+                    bg={'blue.400'}
+                    color={'white'}
+                    _hover={{
+                      bg: 'blue.500',
+                    }}>
+                    Sign in
+                  </Button>
+                </Stack>
+              </Stack>
+            </Box>
+          </Stack>
+        </Flex>
 
         {error && (
           <div className="error-block">
@@ -70,10 +121,6 @@ export default function LogIn({ authenticate }) {
             <p>{error.message}</p>
           </div>
         )}
-
-        <button className="button__submit" type="submit">
-          Submit
-        </button>
       </form>
     </div>
   );
